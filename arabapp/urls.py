@@ -5,6 +5,7 @@ from django.contrib.syndication.views import Feed
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('index2/', views.index2, name='index2'),
     path('about-us/', views.about_us_view, name='about-us'),
     path('contact-us/', views.contact_view, name='contact-us'),
     path('request-quote/', views.request_quote_view, name='request-quote'),
