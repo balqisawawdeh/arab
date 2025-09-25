@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Arab Brothers{% endblock %}</title>
+
+    {# Favicons/Icons - Updated to use Django static paths #}
+    <link rel="icon" href="{% static 'images/favicon.png' %}" sizes="32x32" />
+    <link rel="icon" href="{% static 'images/favicon.png' %}" sizes="192x192" />
+    <link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}" />
+    <meta name="msapplication-TileImage" content="{% static 'images/favicon.png' %}" />
+
+    {# Consolidated Google Fonts link #}
+    <link rel="stylesheet" id="csf-google-web-fonts-css" href="//fonts.googleapis.com/css?family=DM%20Sans:400,500,600,700,800%7CInstrument%20Sans:500,600,700,400&display=swap" media="all">
+
+    {# Consolidated CSS Stylesheets using {% static %} #}
+    <link rel="stylesheet" id="contact-form-7-css" href="{% static 'css/styles.css' %}" media="all">
+    <link rel="stylesheet" id="bootstrap-css" href="{% static 'css/bootstrap.min.css' %}" media="all">
+    <link rel="stylesheet" id="fontawesome-css" href="{% static 'css/fontawesome.css' %}" media="all">
+    <link rel="stylesheet" id="animate-css" href="{% static 'css/animate.css' %}" media="all">
+    <link rel="stylesheet" id="meanmenu-css" href="{% static 'css/meanmenu.min.css' %}" media="all">
+    <link rel="stylesheet" id="buildgo-sass-css" href="{% static 'css/style.css' %}" media="all">
+    <link rel="stylesheet" id="buildgo-style-css" href="{% static 'css/style_1.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-icons-css" href="{% static 'css/elementor-icons.min.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-frontend-css" href="{% static 'css/frontend.min.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-post-5-css" href="{% static 'css/post-5.min.css' %}" media="all">
+    <link rel="stylesheet" id="widget-heading-css" href="{% static 'css/widget-heading.min.css' %}" media="all">
+    <link rel="stylesheet" id="widget-image-css" href="{% static 'css/widget-image.min.css' %}" media="all">
+    <link rel="stylesheet" id="flexitype-swiper-style-css" href="{% static 'css/swiper-bundle.min.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-post-1272-css" href="{% static 'css/post-1272.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-post-1275-css" href="{% static 'css/post-1275.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-post-1276-css" href="{% static 'css/post-1276.css' %}" media="all">
+    <link rel="stylesheet" id="flexitype-elements-widget-css-css" href="{% static 'css/widget.css' %}" media="all">
+    <link rel="stylesheet" id="flexitype-pro-elements-widget-css-css" href="{% static 'css/widget_1.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-gf-local-roboto-css" href="{% static 'css/roboto.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-gf-local-robotoslab-css" href="{% static 'css/robotoslab.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-gf-local-instrumentsans-css" href="{% static 'css/instrumentsans.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-icons-flexitype-icon_lists-css" href="{% static 'css/flaticon_flexitype.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-icons-shared-0-css" href="{% static 'css/fontawesome.min.css' %}" media="all">
+    <link rel="stylesheet" id="elementor-icons-fa-brands-css" href="{% static 'css/brands.min.css' %}" media="all">
+    <link rel="stylesheet" href="{% static 'arabapp/css/post-1275.css' %}">
+
+    {# Consolidated Global CSS Rules (from wp-generated inline blocks) #}
+    <style id="global-theme-styles">
+        /* Global CSS variables/roots from WordPress styles block */
+        :root {
+            --primary-color-1: #FFBF43;
+            /* Added from the separate theme style block */
+            --wp--preset--aspect-ratio--square: 1;
+            /* ... (remaining global CSS variables from Elementor/WP) ... */
+            --wp--preset--color--black: #000000;
+            /* ... (etc) ... */
+            --wp--preset--font-size--small: 13px;
+        }
+
+        /* Essential Structural Styles */
+        :where(.is-layout-flex) { gap: 0.5em; }
+        :where(.is-layout-grid) { gap: 0.5em; }
+        body .is-layout-flex { display: flex; }
+        /* ... (remaining structural layout CSS) ... */
+
+        /* Theme Typography */
+        body { font-family: "DM Sans"; font-weight: 400; }
+        h1, h2, h3, h4, h5, h6 { font-family: "Instrument Sans"; font-weight: 500; }
+    </style>
+    <style id="elementor-lazy-load-fix">
+        /* Elementor Lazy Load Fix */
+        .e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+        .e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * { background-image: none !important; }
+        @media screen and (max-height: 1024px) {
+            .e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+            .e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * { background-image: none !important; }
+        }
+        @media screen and (max-height: 640px) {
+            .e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+            .e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * { background-image: none !important; }
+        }
+    </style>
+    <style id="classic-theme-styles-clean">
+        /* Cleaned Classic Theme Styles */
+        .wp-block-button__link {
+            color: #fff;
+            background-color: #32373c;
+            border-radius: 9999px;
+            box-shadow: none;
+            text-decoration: none;
+            padding: calc(.667em + 2px) calc(1.333em + 2px);
+            font-size: 1.125em
+        }
+        .wp-block-file__button {
+            background: #32373c;
+            color: #fff;
+            text-decoration: none
+        }
+    </style>
+
+    {% block head_extra %}{% endblock %}
+</head>
+
+<body class="{% block body_class %}wp-theme-buildgo elementor-default elementor-template-full-width{% endblock %}">
+    {# Theme Loader #}
+    <div class="theme-loader">
+        <div class="spinner">
+            <div class="spinner-bounce one"></div>
+            <div class="spinner-bounce two"></div>
+            <div class="spinner-bounce three"></div>
+        </div>
+    </div>
+    <div id="page" class="site">
+
+        {% block header %}
+            {% include 'header.html' %}
+        {% endblock %}
+
+        <main id="primary" class="site-main">
+            {% block content %}
+            {# Page-specific content will be inserted here #}
+            {% endblock %}
+        </main>
+
+        {% block footer %}
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-0f04e4c elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="0f04e4c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-container elementor-column-gap-default">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-593259e" data-id="593259e" data-element_type="column">
+                    <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-b485202 elementor-widget elementor-widget-text-editor" data-id="b485202" data-element_type="widget" data-widget_type="text-editor.default">
+                            <div class="elementor-widget-container">
+                                <p>© 2025 All Rights Reserved. Arab Brothers is A Product of <a href="#">Your Company Name</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+
+    </div>{# /#page .site #}
+
+    {# Consolidated Global Scripts using {% static %} - Ensure these files exist in your static/js/ folder #}
+    <script src="{% static 'js/jquery.min.js' %}" id="jquery-core-js"></script>
+    <script src="{% static 'js/jquery-migrate.min.js' %}" id="jquery-migrate-js"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}" id="flexitype-counter-script-js"></script>
+    <script src="{% static 'js/waypoints.min.js' %}" id="flexitype-waypoints-script-js"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}" id="flexitype-swiper-script-js"></script>
+    <script src="{% static 'js/progressbar.min.js' %}" id="flexitype-skills-script-js"></script>
+
+    {# The following scripts are the remaining Elementor core scripts. You must include these JS files in your static/js folder for the front-end animations/widgets to function. #}
+    <script src="{% static 'js/frontend.min.js' %}" id="elementor-frontend-js"></script>
+    <script src="{% static 'js/preloaded-modules.min.js' %}" id="elementor-preloaded-modules-js"></script>
+
+    {% block body_scripts %}{% endblock %}
+
+</body>
+</html>
